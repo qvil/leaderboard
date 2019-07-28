@@ -20,14 +20,11 @@
   },
   "homepage": "https://github.com/qvil/leaderboard#readme",
   "dependencies": {
+    "flubber": "^0.4.2",
     "next": "^9.0.2",
+    "popmotion": "^8.7.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  },
-  "devDependencies": {
-    "@types/node": "^12.6.8",
-    "@types/react": "^16.8.23",
-    "@types/react-dom": "^16.8.5",
-    "typescript": "^3.5.3"
+    "react-dom": "^16.8.6",
+    "react-pose": "^4.0.8"
   }
 }
