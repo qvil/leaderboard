@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Loading from "../components/Loading";
-
+//
 const index = () => {
   const [state, setState] = useState({ isLoaded: false });
   const { isLoaded } = state;
