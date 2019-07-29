@@ -1,28 +1,25 @@
-import React from "react";
-import App, { Container } from "next/app";
+import { Container } from "next/app";
 import GlobalStyles from "../styles/GlobalStyles";
 
-class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
+const App = ({ Component, pageProps, customProps }) => {
+  console.log("TCL: App -> customProps", customProps);
+  return (
+    <Container>
+      <GlobalStyles />
+      <Component customProps={customProps} {...pageProps} />
+    </Container>
+  );
+};
 
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
+App.getInitialProps = async ({ Component, ctx }) => {
+  console.log("TCL: App.getInitialProps -> ctx", ctx);
+  let pageProps = {};
 
-    return { pageProps };
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx);
   }
 
-  render() {
-    const { Component, pageProps } = this.props;
+  return { pageProps, customProps: "customProps" };
+};
 
-    return (
-      <Container>
-        <GlobalStyles />
-        <Component {...pageProps} />
-      </Container>
-    );
-  }
-}
-
-export default MyApp;
+export default App;
