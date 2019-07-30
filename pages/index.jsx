@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Loading from "../components/Loading";
 //
-const index = ({ customProps }) => {
-  console.log("TCL: index -> customProps", customProps);
+const index = () => {
   const [state, setState] = useState({ isLoaded: false });
   const { isLoaded } = state;
 

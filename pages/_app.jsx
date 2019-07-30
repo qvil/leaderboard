@@ -1,18 +1,24 @@
 import { Container } from "next/app";
 import GlobalStyles from "../styles/GlobalStyles";
+import * as firebase from "firebase/app";
+import firebaseConfig from "../config/firebase";
+import "firebase/auth";
+import "firebase/database";
 
-const App = ({ Component, pageProps, customProps }) => {
-  console.log("TCL: App -> customProps", customProps);
+// Initialize Firebase
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+const App = ({ Component, pageProps }) => {
   return (
     <Container>
       <GlobalStyles />
-      <Component customProps={customProps} {...pageProps} />
+      <Component {...pageProps} />
     </Container>
   );
 };
 
 App.getInitialProps = async ({ Component, ctx }) => {
-  console.log("TCL: App.getInitialProps -> ctx", ctx);
   let pageProps = {};
 
   if (Component.getInitialProps) {
