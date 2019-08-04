@@ -62,3 +62,6 @@ typings/
 
 # Configuration
 config
+
+# vscode
+.vscode
