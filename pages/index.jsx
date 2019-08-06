@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Loading from "../components/Loading";
+import EmailPW from "./auth/EmailPW";
 //
 const index = () => {
   const [state, setState] = useState({ isLoaded: false });
@@ -8,12 +9,7 @@ const index = () => {
   return (
     <div>
       {!isLoaded && <Loading setLoading={isLoaded => setState({ isLoaded })} />}
-      {isLoaded && (
-        <div>
-          <h1>Index Page</h1>
-          <p>Paragraph</p>
-        </div>
-      )}
+      {isLoaded && <EmailPW />}
 
       <style jsx>
         {`
