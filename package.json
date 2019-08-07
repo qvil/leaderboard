@@ -4,7 +4,7 @@
   "description": "Leaderboard. 🏆",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 7000",
     "build": "next build",
     "start": "next start"
   },
