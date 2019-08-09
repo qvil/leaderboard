@@ -1,7 +1,7 @@
-import Signup from "./Signup";
+import Signin from "./Signin";
 
 const Email = () => {
-  return <Signup />;
+  return <Signin />;
 };
 
 export default Email;
