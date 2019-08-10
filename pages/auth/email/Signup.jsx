@@ -1,8 +1,10 @@
 import { useState } from "react";
 import firebase from "firebase";
+import { useRouter } from "next/router";
 import Card from "../../../components/Card";
 
 const Signup = () => {
+  const { push } = useRouter();
   const initialState = { email: "", password: "", loading: false };
   const [state, setState] = useState(initialState);
   const { email, password, loading } = state;
@@ -25,6 +27,7 @@ const Signup = () => {
 
       if (res.additionalUserInfo.isNewUser) {
         alert("회원가입을 환영합니다!");
+        push("/");
       }
     } catch ({ code, message }) {
       alert(message);

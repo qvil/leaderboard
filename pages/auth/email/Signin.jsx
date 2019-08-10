@@ -2,8 +2,10 @@ import { useState } from "react";
 import Card from "../../../components/Card";
 import Link from "next/link";
 import firebase from "firebase";
+import { useRouter } from "next/router";
 
 const Signin = () => {
+  const { push } = useRouter();
   const [state, setState] = useState({
     email: "",
     password: "",
@@ -23,7 +25,10 @@ const Signin = () => {
       const res = await firebase
         .auth()
         .signInWithEmailAndPassword(email, password);
-      if (res) alert("환영합니다!");
+      if (res) {
+        alert("환영합니다!");
+        push("/");
+      }
 
       console.log("TCL: signin -> res", res);
     } catch (error) {
