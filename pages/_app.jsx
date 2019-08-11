@@ -1,13 +1,20 @@
 import { Container } from "next/app";
 import GlobalStyles from "../styles/GlobalStyles";
 import firebase from "firebase/app";
-import firebaseConfig from "../config/firebase";
 import "firebase/auth";
 import "firebase/database";
 
 // Initialize Firebase
 if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp({
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    databaseURL: process.env.databaseURL,
+    projectId: process.env.projectId,
+    storageBucket: process.env.storageBucket,
+    messagingSenderId: process.env.messagingSenderId,
+    appId: process.env.appId
+  });
 }
 const App = ({ Component, pageProps }) => {
   return (
