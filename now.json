@@ -1,10 +1,10 @@
 {
   "env": {
-    "apiKey": "@apiKey",
-    "authDomain": "@authDomain",
-    "databaseURL": "@databaseURL",
-    "projectId": "@projectId",
-    "messagingSenderId": "@messagingSenderId",
-    "appId": "@appId"
+    "apiKey": "apiKey",
+    "authDomain": "authDomain",
+    "databaseURL": "databaseURL",
+    "projectId": "projectId",
+    "messagingSenderId": "messagingSenderId",
+    "appId": "appId"
   }
 }
