@@ -4,7 +4,7 @@ import Link from "next/link";
 import firebase from "firebase";
 import { useRouter } from "next/router";
 
-const Signin = () => {
+const Signin = ({ onSignin }) => {
   const { push } = useRouter();
   const [state, setState] = useState({
     email: "",
@@ -28,6 +28,7 @@ const Signin = () => {
       if (res) {
         alert("환영합니다!");
         push("/");
+        onSignin(true);
       }
 
       console.log("TCL: signin -> res", res);

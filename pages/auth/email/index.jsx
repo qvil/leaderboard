@@ -1,7 +1,7 @@
 import Signin from "./Signin";
 
-const Email = () => {
-  return <Signin />;
+const Email = ({ onSignin }) => {
+  return <Signin onSignin={onSignin} />;
 };
 
 export default Email;
