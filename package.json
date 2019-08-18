@@ -4,7 +4,7 @@
   "description": "Leaderboard. 🏆",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "babel-node server.js",
     "build": "next build",
     "start": "next start",
     "deploy": "now"
@@ -34,6 +34,8 @@
     "react-pose": "^4.0.8"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
     "dotenv": "^8.0.0",
     "dotenv-webpack": "^1.7.0"
   }
