@@ -4,7 +4,7 @@
   "description": "Leaderboard. 🏆",
   "main": "index.js",
   "scripts": {
-    "dev": "babel-node server.js",
+    "dev": "next",
     "build": "next build",
     "start": "next start",
     "deploy": "now"
