@@ -23,7 +23,13 @@ export default function MediaCard({ title, description, img, ...others }) {
   const classes = useStyles({});
   const [raised, setRaised] = useState(false);
 
-  const onFocus = value => () => {
+  const onFocus = useCallback(
+    value => () => {
+      _onFocus(value);
+    },
+    [title, description, img]
+  );
+  const _onFocus = value => {
     setRaised(value);
   };
 

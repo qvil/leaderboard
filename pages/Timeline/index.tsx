@@ -24,6 +24,7 @@ export default function Timeline() {
     <div className={classes.container}>
       {tileData.map(({ title, description, img }) => (
         <MediaCard
+          key={`MediaCard-${title}`}
           className={classes.card}
           img={img}
           title={title}
