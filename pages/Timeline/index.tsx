@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import MediaCard from "../../components/MediaCard";
 import tileData from "./tileData";
@@ -23,13 +24,14 @@ export default function Timeline() {
   return (
     <div className={classes.container}>
       {tileData.map(({ title, description, img }) => (
-        <MediaCard
-          key={`MediaCard-${title}`}
-          className={classes.card}
-          img={img}
-          title={title}
-          description={description}
-        />
+        <Link key={`MediaCard-${title}`} href={`/leagues/${title}`}>
+          <MediaCard
+            className={classes.card}
+            img={img}
+            title={title}
+            description={description}
+          />
+        </Link>
       ))}
     </div>
   );
