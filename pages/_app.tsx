@@ -3,6 +3,9 @@ import GlobalStyles from "../styles/GlobalStyles";
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
+import { useRouter } from "next/router";
+
+import LNB from "../components/LNB";
 
 // Initialize Firebase
 if (!firebase.apps.length) {
@@ -17,9 +20,13 @@ if (!firebase.apps.length) {
   });
 }
 const App = ({ Component, pageProps }) => {
+  const router = useRouter();
+  const { league } = router.query;
+
   return (
     <Container>
       <GlobalStyles />
+      <LNB title={league || "Home"} />
       <Component {...pageProps} />
     </Container>
   );
