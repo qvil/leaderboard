@@ -7,20 +7,27 @@ interface ILeagueProps {}
 
 const useStyles = makeStyles({
   root: {
-    padding: 16
+    padding: 16,
+    display: "flex",
+    justifyContent: "center"
   }
 });
 
+const dummyData = {
+  name: "qvil",
+  phone: 123
+};
+
 const League: React.FunctionComponent<ILeagueProps> = props => {
   const router = useRouter();
+  console.log("TCL: router", router);
   const { root } = useStyles({});
 
-  const { league } = router.query;
+  // const { league } = router.query;
 
   return (
     <div className={root}>
-      league: {league}
-      <Result />
+      <Result title="Match 1" data={dummyData} />
     </div>
   );
 };

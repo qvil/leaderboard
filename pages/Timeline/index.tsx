@@ -23,8 +23,12 @@ export default function Timeline() {
 
   return (
     <div className={classes.container}>
-      {tileData.map(({ title, description, img }) => (
-        <Link key={`MediaCard-${title}`} href={`/leagues/${title}`}>
+      {tileData.map(({ title, description, img, as }) => (
+        <Link
+          key={`MediaCard-${title}`}
+          href={`/leagues/${title}`}
+          as={`/leagues/${as}`}
+        >
           <MediaCard
             className={classes.card}
             img={img}
